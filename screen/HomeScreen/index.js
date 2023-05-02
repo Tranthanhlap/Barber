@@ -46,16 +46,34 @@ const HomeScreen = () => {
       loadData();
   },[])
  
-         console.log(users1)
 
   // useEffect( () =>{
-    
+    const loadData = async (area) => {
+      console.log('2222222222222',area)
+      citiesRef
+      .where('area','==',`${area}`).onSnapshot(
+        QuerySnapshot =>{
+        QuerySnapshot.forEach((doc)=>{
+        const{latitude,longitude,name,value,area}=doc.data()
+          SearchArea.push({
+            id:doc.id,
+            name,
+            value,
+            latitude,
+            longitude,
+            area,
+          })
+        })
+       setSearchArea(SearchArea)
+       
+      }
+      
+      )
+ 
+    }
   //   loadData();
   // },[])
 
-  function area() {
-
-  }
 
   
 //  SELECT Barber.latitude, Barber.longitude, Barber.name, Barber.rate
@@ -82,7 +100,7 @@ const HomeScreen = () => {
                 })
             })
             setUsers(users)
-            // console.log(users)
+          
         }
     )}
     loadData();
@@ -106,6 +124,8 @@ const HomeScreen = () => {
       }),
       
     );
+    console.log('2222222222222',map1)
+
 
     return (
         <View style={styles.container}>
@@ -135,26 +155,8 @@ const HomeScreen = () => {
             longitudeDelta: 0.007,
             
           })
-              const loadData = async () => {
-              citiesRef
-              .where('area','==','TD').onSnapshot(
-                QuerySnapshot =>{
-                const SearchArea=[]
-                QuerySnapshot.forEach((doc)=>{
-                const{latitude,longitude,name,value}=doc.data()
-                  SearchArea.push({
-                    id:doc.id,
-                    name,
-                    value,
-                    latitude,
-                    longitude,
-                  })
-                })
-               setSearchArea(SearchArea)
-              }
-              )}
-              console.log("1111111",SearchArea);
-
+            loadData(item?.area) 
+            console.log("1111111",item.area);
               // TODO : function handle area ??
             }
             
@@ -167,8 +169,8 @@ const HomeScreen = () => {
             region={coordination}
           
            >
-            {users.length > 0 &&
-              users.map((map1, index) => {
+            {SearchArea.length > 0 &&
+              SearchArea.map((map1, index) => {
                return(
                 <Marker
                 key={index}
