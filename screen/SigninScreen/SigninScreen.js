@@ -36,7 +36,7 @@ const SigninScreen = () => {
       console.log('Sign in')
       const user = userCredential.user;
       console.log(user)
-      navigation.navigate('HomeUI')
+      navigation.navigate('tabb')
     })
     .catch(error => {
       console.log(error)
@@ -50,7 +50,7 @@ const SigninScreen = () => {
 
 
   const onSignInPressed = () =>{
-    navigation.navigate('HomeUI');
+    navigation.navigate('tabb');
   }
 
   const onForgotThePasswordPressed = () =>{

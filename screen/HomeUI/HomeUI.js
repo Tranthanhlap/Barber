@@ -20,7 +20,6 @@ const HomeUI = () => {
 
   return (
     <View >
-      <Text  style={styles.UIText} >HomeUI</Text>
       <View style={styles.UI}>
       <HomeUIButton  onPress={clickSearch} text="SEARCH" />
       <HomeUIButton  text="ACCOUNT" />

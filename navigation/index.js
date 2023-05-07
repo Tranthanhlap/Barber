@@ -11,24 +11,27 @@ import HomeScreen from '../screen/HomeScreen';
 import HomeUI from '../screen/HomeUI';
 import LogOut from '../screen/LogOut/LogOut';
 import Homepage from '../screen/Homepage';
-
+import Ionicons  from 'react-native-vector-icons/Ionicons'
+import MainContainer from './MainContainer';
 
 
 const Stack = createNativeStackNavigator();
 
+
 const Navigation = () => {
   return (
     <NavigationContainer>
-    <Stack.Navigator screenOptions={{headerShown:false}}>
+    <Stack.Navigator independent={true} screenOptions={{headerShown:false}}>
         <Stack.Screen name="SigninScreen" component={SigninScreen}/>
         <Stack.Screen name="SignUpScreen" component={SignUpScreen}/>
-        <Stack.Screen name="ConfirmEmailScreen" component={ConfirmEmailScreen}/>
+        <Stack.Screen name="MainContainer" component={MainContainer}/>
+        {/* <Stack.Screen name="ConfirmEmailScreen" component={ConfirmEmailScreen}/>
         <Stack.Screen name="ForgotPassWord" component={ForgotPassWord}/>
-        <Stack.Screen name="NewPassWord" component={NewPassWord}/>
-        <Stack.Screen name="HomeScreen" component={HomeScreen}/>
-        <Stack.Screen name="HomeUI" component={HomeUI}/>
-        <Stack.Screen name="Homepage" component={Homepage}/>
-        <Stack.Screen name="LogOut" component={LogOut}/>
+        <Stack.Screen name="NewPassWord" component={NewPassWord}/> */}
+        {/* <Stack.Screen name="homeName" component={HomeScreen}/>
+        <Stack.Screen name="detailsName" component={HomeUI}/> */}
+        {/* <Stack.Screen name="Homepage" component={Homepage}/> */}
+        {/* <Stack.Screen name="settingsName" component={LogOut}/> */}
     </Stack.Navigator>
 
     </NavigationContainer>

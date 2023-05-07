@@ -6,15 +6,19 @@ import Homepage from './screen/Homepage';
 import HomeUI from './screen/HomeUI';
 import { NavigationContainer } from '@react-navigation/native';
 import LogOut from './screen/LogOut/LogOut';
+import MainContainer from './navigation/MainContainer';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
+    <MainContainer/>
+    
      {/* <Navigation/> */}
      {/* <LogOut/> */}
      {/* <HomeUI/> */}
-     <HomeScreen/>
+     {/* <HomeScreen/> */}
      {/* <Homepage/> */}
+
     </SafeAreaView>    
   );
 

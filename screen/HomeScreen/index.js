@@ -10,7 +10,9 @@ import { SelectList } from 'react-native-dropdown-select-list';
 
 
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
+
+
     const [users, setUsers] = useState([]); 
     const [users1, setUsers1] = useState([]); 
     const [SearchArea, setSearchArea] = useState([]); 
