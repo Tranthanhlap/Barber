@@ -22,7 +22,8 @@ const HomeUIButton = ({onPress,text,type="PRIMARY",bgColor,fgColor}) => {
 
 const styles = StyleSheet.create({
  container:{
-    width:'50%',
+    width:'10%',
+    height:'20%',
     padding:15,
     marginVertical:15,
     alignItems:'center',

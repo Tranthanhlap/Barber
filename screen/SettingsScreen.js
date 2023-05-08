@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function SettingsScreen({ navigation }) {
+const SettingsScreen = ({ navigation }) => {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text
-                onPress={() => navigation.navigate('Home')}
-                style={{ fontSize: 26, fontWeight: 'bold' }}>Settings Screen</Text>
-        </View>
-    );
-}
+      <View >
+        <Button title='Logout' onPress={() => navigation.navigate('SigninScreen')} />
+      </View>
+    )
+  }
+
+  export default SettingsScreen;

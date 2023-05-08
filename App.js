@@ -1,6 +1,5 @@
 import react from 'react';
 import { StyleSheet, Text,SafeAreaView } from 'react-native';
-import Navigation from './navigation';
 import HomeScreen from './screen/HomeScreen';
 import Homepage from './screen/Homepage';
 import HomeUI from './screen/HomeUI';

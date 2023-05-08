@@ -59,6 +59,15 @@ function Tabb() {
   );
 }
 
+function SettingsScreenLogOut(){
+  return (
+    <View style={styles.container}>
+      <Text>Dashboard</Text>
+      <Button title='Logout' onPress={() => navigation.navigate('SigninScreen')} />
+    </View>
+  )
+}
+
 
 
 export default function MainContainer() {
@@ -66,8 +75,9 @@ export default function MainContainer() {
     <NavigationContainer>
     <Stack.Navigator screenOptions={{ headerShown:false }}>
        <Stack.Screen name="SigninScreen" component={SigninScreen}/>
-          <Stack.Screen name="SignUpScreen" component={SignUpScreen}/>
-          <Stack.Screen name='tabb' component={Tabb} />
+        <Stack.Screen name="SignUpScreen" component={SignUpScreen}/>
+        <Stack.Screen name='tabb' component={Tabb} />
+
         </Stack.Navigator>
     </NavigationContainer>
   );
